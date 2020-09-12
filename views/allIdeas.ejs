@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adding a title dynamically with ejs: -->
+    <title> <%=caption%> </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<%- include('includes/headerMenu.ejs') %>
+
+
+<body>
+
+    <% if(ideas.length>0){%>
+        <div class="allIdeas">
+        <% for (let i of ideas){ %>
+            <div class="anIdea">
+
+                    <p class="ideaTitle"><%=i.title%></p>
+
+                    <p class="ideaDescription"><%=i.description%></p>
+
+
+
+
+                    <form  class="parallelButton" action="/sendtoaday/<%= i.id%>" method="POST">
+                        <button class="parallelButton" type="submit"> Plan in </button>
+                        <input  class="dateForminIdea" type="date" name="date"></input>
+                    </form>
+
+
+                    <form class="parallelButton"  action="/delete/<%= i.id %>" method="GET">
+                        <input  type="hidden" name="id" value="<%=i.id%>"></input>
+                        <button class="deleteButton" type="submit">Delete</button>
+                    </form>
+
+                    <form class="parallelButton" action="/details/<%= i.id %>" method="GET">
+                        <input  type="hidden" name="id" value="<%=i.id%>"></input>
+                        <button type="submit">More</button>
+                    </form>
+
+
+
+
+
+
+            </div>
+
+        <%}%>
+        </div>
+
+
+            <%}else{%>
+                <h1>No ideas</h1>
+            <%}%>
+
+
+
+</body>
+</html>

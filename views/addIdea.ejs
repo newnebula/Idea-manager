@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adding a title dynamically with ejs: -->
+    <title> <%=caption%> </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<%- include('includes/headerMenu.ejs') %>
+<body>
+  <form class="ideaDetailsTop"  action="/add-idea/" method="POST">
+    <div class="form-control">
+       <input placeholder="Title..." value="" type="text" name="title">
+    </div>
+
+
+
+    <div class="form-control">
+      <textarea placeholder="Describe the idea..." rows="5" name="description"></textarea>
+    </div>
+    <button type="submit" > Add idea </button>
+  </form>
+
+
+</body>
+</html>

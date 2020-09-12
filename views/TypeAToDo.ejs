@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adding a title dynamically with ejs: -->
+    <title> <%=caption%> </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<%- include('includes/headerMenu.ejs') %>
+
+
+<body>
+    <form class="ideaDetailsTop"  action="/add-ToDo" method="POST">
+        <div class="form-control">
+            <input  class="dateinputOnPage" type="date" name="date"></input>
+        </div>
+
+        <div class="form-control">
+            <textarea placeholder="To do!" rows="5" name="toDo"></textarea>
+        </div>
+        <button type="submit" > Plan </button>
+    </form>
+
+
+</body>

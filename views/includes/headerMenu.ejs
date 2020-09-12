@@ -1,0 +1,32 @@
+<header class="main-header">
+    <nav class="main-header__nav">
+      <div class="main-header__item-list">
+        <div class="main-header__item"><a href="/all-ideas">All ideas</a></div>
+        <div class="main-header__item"><a href="/add-idea">Add an idea</a></div>
+        <div class="main-header__item"><a href="/add-toDoForm">Plan it</a></div>
+
+        <div class="main-header__item">
+          <form  class="menuForm" action="/print-date" method="POST">
+            <div><button class="menuButton" type="submit"> Get the day</button> </div>
+           <div><input  class="dateInput" type="date" name="date"></input></div>
+          </form>
+        </div>
+
+        <!-- <div class="main-header__item"><a  href="/signInGet/?wrongPassword=false&wrongUsername=false">Sign in</a></div>
+        <div class="main-header__item"><a href="/logInGet">Log in</a></div> -->
+
+
+        <div class="main-header__item">
+          <form  class="menuForm" action="/logOutPost" method="POST">
+            <div><button class="menuButton" type="submit"> Log out</button> </div>
+
+          </form>
+        </div>
+
+      </div>
+    </nav>
+
+
+</header>
+
+<div class="spaceUnderMenu"></div>

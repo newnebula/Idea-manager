@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adding a title dynamically with ejs: -->
+    <title> <%=caption%> </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<%- include('includes/headerMenu.ejs') %>
+<body>
+    <form class="ideaDetailsTop" action="/edit-idea/<%=idea.id %>" method="POST">
+        <div class="form-control">
+          <input value="<%=idea.title %>" type="text" name="new_title" id="_title">
+        </div>
+        <div class="form-control">
+          <textarea rows="5" cols="60" name="new_description" id="_description"><%=idea.description%></textarea>
+        </div>
+        <button type="submit" > Change </button>
+      </form>
+
+</body>
+</html>

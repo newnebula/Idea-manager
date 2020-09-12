@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adding a title dynamically with ejs: -->
+    <title> <%=caption%> </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<%- include('includes/headerMenu.ejs') %>
+
+
+<body>
+    <div class="ideaDetailsTop">
+
+
+
+        <h2><%=idea.title %></h2>
+
+        <p><%=idea.description %></p>
+
+
+        <form action="/edit-idea/<%=idea.id %>" method="GET">
+            <input  type="hidden" name="id" value="<%=idea.id%>"></input>
+            <button class="paleButton" type="submit">Edit idea</button>
+        </form>
+
+        <form class="ideaDetailsTopInForm" action="/add-entry/<%= idea.id %>" method="POST">
+            <div class="form-control">
+            <textarea rows="5"  name="entry" id="_entry" placeholder="What did you do?"></textarea>
+            </div>
+            <button type="submit" >Add</button>
+        </form>
+
+    </div>
+
+
+
+    <div class="diary">
+
+        <% if(entries.length>0){%>
+            <% for (let e of entries){ %>
+
+               <div class="entry">
+                    <div>
+                    <p class="entry-date"><%=e[0]%></p>
+                    </div>
+                    <div>
+                    <p><%=e[1]%></p>
+                    </div>
+               </div>
+
+
+
+
+            <%}%>
+
+                <%}else{%>
+                    <h1>No diary</h1>
+                <%}%>
+    </div>
+
+
+</body>
+</html>

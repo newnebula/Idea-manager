@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adding a title dynamically with ejs: -->
+    <title> <%=caption%> </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+
+
+
+<!-- For the moment just pasting the needed part of the menu -->
+<header class="main-header">
+  <nav class="main-header__nav">
+    <div class="main-header__item-list">
+      <div class="main-header__item"><a  href="/signInGet/?wrongPassword=false&wrongUsername=false">Sign in</a></div>
+      <div class="main-header__item"><a href="/logInGet">Log in</a></div>
+      <!-- <div class="main-header__item">
+        <form  class="menuForm" action="/logOutPost" method="POST">
+          <div><button class="menuButton" type="submit"> Log out</button> </div>
+
+        </form>
+      </div>       -->
+    </div>
+  </nav>
+</header>
+
+<body>
+  <form class="ideaDetailsTop"  action="/log-in" method="POST">
+    <div class="form-control">
+       <input placeholder="Username" value="" type="text" name="username">
+    </div>
+
+
+
+    <div class="form-control">
+        <input placeholder="Password" type="password" value="" type="text" name="password">
+     </div>
+    <button type="submit" > Log in </button>
+  </form>
+
+
+</body>
+</html>

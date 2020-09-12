@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adding a title dynamically with ejs: -->
+    <title> <%=caption%> </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<%- include('includes/headerMenu.ejs') %>
+
+
+<body>
+
+    <h2> <%= theDate%></h2>
+
+
+
+    <% if(toDoThings.length>0){%>
+        <div class="allToDos">
+        <% for (let t of toDoThings){ %>
+            <div class="aToDo">
+                    <p class="toDoText"><%=t.text%></p>
+                    <form class="parallelButtonInToDo" action="/deleteToDo/<%=t.id%>" method="GET">
+                        <input  type="hidden" name="id" value="<%=t.id%>"></input>
+                        <button  type="submit">Delete</button>
+                    </form>
+            </div>
+        <%}%>
+        </div>
+
+     <%}else{%>
+        <h2>Nothing planned</h2>
+    <%}%>
+
+
+
+ <% if(ideas.length>0){%>
+    <div class="allIdeas">
+    <% for (let i of ideas){ %>
+        <div class="anIdea">
+            <p class="ideaTitle"><%= i.title%></p>
+            <p class="ideaDescription"><%= i.description%></p>
+
+            <form class="parallelButton" action="/details/<%= i.id %>" method="GET">
+                <input  type="hidden" name="id" value="<%=i.id%>"></input>
+                <button type="submit">More</button>
+            </form>
+        </div>
+
+    <%}%>
+    </div>
+
+    <%}else{%>
+        <h2>No ideas</h2>
+    <%}%>
+</body>
+</html>

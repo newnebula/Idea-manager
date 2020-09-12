@@ -1,0 +1,357 @@
+/* notused{
+    https://visme.co/blog/website-color-schemes/
+ }  */
+
+@font-face{
+    font-family:'Indie Flower';
+    src: url(https://fonts.gstatic.com/s/indieflower/v11/m8JVjfNVeKWVnh3QMuKkFcZVaUuH.woff2);
+}
+
+html{
+    /* Different color palettes: */
+    /* --navAndButtonColor: #F070A1;
+    --navAndButtonTextColor:  rgb(223, 223, 223);
+    --navAndButtonHoverColor:  #12C998;
+    --AllIdeasBackground: rgb(240, 181, 203);
+
+    //Colors for ideaTiles:
+    --color1: rgb(92, 202, 173);
+    --color2: #439F76;
+    --color3: rgb(16, 145, 108);
+    --color4: rgb(240, 181, 203);
+
+    --navAndButtonColor: rgb(35, 121, 192);
+    --navAndButtonTextColor:  rgb(195, 206, 82);
+    --navAndButtonHoverColor:  rgb(49, 39, 11);
+    --AllIdeasBackground: white;
+
+    //Colors for ideaTiles:
+    --color1: rgb(92, 202, 173);
+    --color2: #439F76;
+    --color3: rgb(106, 102, 173);
+    --color4: rgb(240, 181, 203); */
+
+    --navAndButtonColor: rgb(184, 185, 99);
+    --navAndButtonTextColor: black;
+    --navAndButtonHoverColor:  rgb(217, 255, 5);
+    --aToDoBackground: rgb(198, 204, 164);
+    --AllIdeasBackground: white;
+    --deleteButton: rgb(175, 64, 64);
+    /* Colors for ideaTiles: */
+    --color1: rgb(87, 86, 86);
+    --color2: rgb(87, 86, 86);
+    --color3: rgb(87, 86, 86);
+    --color4: rgb(87, 86, 86);
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: var( --color4);
+}
+
+.spaceUnderMenu{
+    margin-top: 10rem;
+}
+
+@media(min-width: 499px){
+    .spaceUnderMenu{
+        display: none;
+    }
+}
+
+h2, .dateinputOnPAge{
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    max-width: 70%;
+    font-family:'Indie Flower';
+}
+
+.main-header{
+    /* padding-bottom: 2rem; */
+    width: 100%;
+    /* height: 3.5rem; */
+    color: var(--navAndButtonTextColor);
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: var(--navAndButtonColor);
+    font-family: 'Indie Flower';
+}
+
+.main-header__nav{
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* padding: 0 1.5rem; */
+}
+
+.main-header__item-list{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.main-header__item {
+    /* border-top: 2px dotted var(--navAndButtonTextColor); */
+    color: inherit;
+    margin: 0.5rem 2.5rem;
+    padding: 0.5rem;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.menuButton{
+    padding: 0;
+    margin: 0;
+    background-color: var(--navAndButtonColor);
+}
+
+.main-header__item a:hover, .menuButton:hover{
+    text-decoration: none;
+    background-color: var(--navAndButtonColor);
+    color: var(--navAndButtonHoverColor)
+}
+/* Datepicker in the menu: */
+.dateInput{
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: inherit;
+    border: none;
+    padding:0;
+}
+
+/* Datepicker on the idea tile: */
+.dateForminIdea{
+    border: none;
+    color: var(--navAndButtonColor);
+    display: inline;
+    max-width: 9rem;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.form-control{
+    display: block;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    width: 70%;
+}
+
+input, textarea{
+    border: 5px dotted var(--navAndButtonColor);
+    font: inherit;
+    border-radius: 10px;
+    width: 100%;
+    padding:0.5rem;
+}
+
+button{
+    font: inherit;
+    color: var(--navAndButtonTextColor);
+    background-color: var(--navAndButtonColor);
+    border-radius: 10px;
+    margin: 0.5rem 0;
+    border: none;
+    padding: 0.5rem;
+}
+
+button:hover{
+    background-color: var(--navAndButtonHoverColor);
+}
+
+.parallelButton{
+    display: inline;
+    margin-right: 0.5rem;
+    }
+
+.deleteButton{
+    background-color: var(--deleteButton);
+}
+
+.allIdeas{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0rem;
+
+    width: 100%;
+    background-color: var(--AllIdeasBackground) ;
+    /* height: 500rem;*/
+}
+
+.anIdea{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1.5rem;
+    padding: 0.2rem;
+    border-radius: 10px;
+    /* border: 5px dotted; */
+    box-shadow: 0 8px 6px -6px var(--navAndButtonColor);
+    max-width: 28rem;
+    min-width: 10rem;
+    /* max-height: 20rem; */
+    background-color: white;
+}
+
+.ideaTitle{
+    font-weight: bold;
+    min-width: 100%;
+    display: block;
+}
+
+.ideaDescription{
+    min-width: 100%;
+    display: block;
+}
+
+.diary {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.ideaDetailsTop{
+    width: 100%;
+    color: var(--navAndButtonColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ideaDetailsTopInForm{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: none;
+}
+
+.entry{
+    margin: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    /* border: 1px dotted; */
+    box-shadow: 0 8px 6px -6px var(--navAndButtonColor);
+    /* box-shadow: inset 0 0 10px #000000; */
+    /* box-shadow: 0px 0px 10px 5px rgb(56, 145, 85); */
+    max-width: 20rem;
+}
+
+.entry-date{
+    font-size: 1rem;
+    color: inherit;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.entry:nth-child(3n+0),
+.anIdea:nth-child(3n+0){
+    color: var(--color1);
+}
+.entry:nth-child(3n+1),
+.anIdea:nth-child(3n+1){
+    color: var(--color2);
+}
+.entry:nth-child(5n+1),
+.anIdea:nth-child(5n+1){
+    color: var(--color3);
+}
+.entry:nth-child(6n),
+.anIdea:nth-child(6n){
+    color: var(--color4);
+}
+
+
+
+.allToDos{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+}
+
+
+.aToDo{
+    display: flex;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: var(--aToDoBackground);
+    max-width: 70%;
+    min-width: 20rem;
+    margin: 1rem 0rem;
+}
+
+p{
+    margin: 0.5rem;
+    max-width: 70%;
+    display: inline;
+}
+
+.parallelButtonInToDo{
+    margin-left: auto;
+    display: inline;
+}
+
+@media(max-width: 500px){
+    /* body{
+        margin-top: 5rem;
+    } */
+
+    .main-header{
+        position: fixed;
+        /* padding-bottom: 2rem; */
+        width: 100%;
+        /* height: 3.5rem; */
+        color: var(--navAndButtonTextColor);
+        font-weight: normal;
+        font-size: 1.5rem;
+        background-color: var(--navAndButtonColor);
+        font-family: 'Indie Flower';
+    }
+
+    .main-header__nav{
+        position: fixed 0 0;
+
+        height:100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        /* padding: 0 1.5rem; */
+    }
+
+    .main-header__item-list{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .main-header__item {
+        /* border-top: 2px dotted var(--navAndButtonTextColor); */
+        color: inherit;
+        margin-right: 0.25rem;
+        margin-left: 0.25rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        padding: 0.25rem;
+        border: dotted rgb(59, 59, 59);
+    }
+
+
+
+
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adding a title dynamically with ejs: -->
+    <title> <%=caption%> </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+
+
+
+
+
+<!-- For the moment just pasting the needed part of the menu -->
+<header class="main-header">
+  <nav class="main-header__nav">
+    <div class="main-header__item-list">
+      <div class="main-header__item"><a  href="/signInGet/?wrongPassword=false&wrongUsername=false">Sign in</a></div>
+      <div class="main-header__item"><a href="/logInGet">Log in</a></div>
+      <!-- <div class="main-header__item">
+        <form  class="menuForm" action="/logOutPost" method="POST">
+          <div><button class="menuButton" type="submit"> Log out</button> </div>
+
+        </form>
+      </div>       -->
+    </div>
+  </nav>
+</header>
+<!-- --- -->
+
+
+<body>
+
+
+<% if( wrongUsername === "true"){ %>
+  <h3> Username allredy exists. </h3>
+<%}%>
+
+<% if( wrongPassword === "true"){ %>
+  <h3> Passwords don't match. </h3>
+<%}%>
+
+  <form class="ideaDetailsTop"  action="/sign-in" method="POST">
+    <div class="form-control">
+       <input placeholder="Username" value="" type="text" name="username">
+    </div>
+
+
+
+    <div class="form-control">
+        <input placeholder="Password" value="" type="password" name="password">
+     </div>
+
+     <div class="form-control">
+      <input placeholder=" Confirm password" value="" type="password" name="confirmPassword">
+   </div>
+    <button type="submit" > Sign in </button>
+  </form>
+
+
+</body>
+</html>
